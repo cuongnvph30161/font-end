@@ -1,0 +1,134 @@
+<main>
+    <br/>
+<form class="card-body">
+    <center><h1 style="color: gray;">{{datPhong}}</h1></center>
+</br>
+    <div class="form-group row"  >
+      <label  class="col-sm-2 col-form-label">Tên khách hàng</label>
+      <div class="col-md-10">
+        <input type="text" class="form-control" name="ten" ng-model="input.ten" placeholder="Nhập đầy đủ họ tên">
+        <!-- <label style="color: red;">{{tenP}}</label> -->
+        <p style="color: red;" ng-if="kiemtradulieu.ten == true">Bạn chưa nhập tên*</p>
+      </div>
+    </div>
+    <div class="form-group row"  >
+      <label  class="col-sm-2 col-form-label">Điện thoại</label>
+      <div class="col-md-10">
+        <input type="text" class="form-control" name="dienthoai" ng-model="input.dienthoai" placeholder="Nhập số điện thoại"> 
+        <p style="color: red;" ng-if="kiemtradulieu.dienthoai == true">Bạn chưa nhập số điện thoại*</p>
+        <p style="color: red;" ng-if="kiemtradulieu.dienthoaicheck == true">Phải là số điện thoại Việt Nam</p>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Căn cước công dân</label>
+        <div class="col-md-10">
+          <input type="text" class="form-control"name="cccd" ng-model="input.CanCuoc"   placeholder="Nhập căn cước công dân">
+          <!-- <label style="color: red;">{{CanCuocP}}</label> -->
+          <p style="color: red;" ng-if="kiemtradulieu.CanCuoc == true">Bạn chưa nhập căn cước*</p>
+          <p style="color: red;" ng-if="kiemtradulieu.CanCuoccheck == true">Căn cước phải là số</p>
+        </div>
+    </div>
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label">Ngày đến</label>
+      <div class="col-md-10">
+        <input type="date" ng-model="input.ngayDen"  class="form-control" >
+        <!-- <label style="color: red;">{{ngayDenP}}</label> -->
+        <p style="color: red;" ng-if="kiemtradulieu.ngayDen == true">Bạn chưa ngày đến*</p>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Ngày đi</label>
+        <div class="col-md-10">
+          <input type="date" ng-model="input.ngayDi"  class="form-control" >
+          <!-- <label style="color: red;">{{ngayDiP}}</label> -->
+          <p style="color: red;" ng-if="kiemtradulieu.ngayDi == true">Bạn chưa nhập ngày đi*</p>
+        </div>
+      </div>
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Loại phòng</label>
+        <div class="col-md-10">
+            <select name="loaiPhong" ng-model="input.loaiPhong"  class="form-control">
+                <option>----Chọn----</option>
+                <option>Phòng vip</option>
+                <option>Phòng thường</option>
+              </select>
+              <!-- <label style="color: red;">{{loaiPhongP}}</label> -->
+              <p style="color: red;" ng-if="kiemtradulieu.loaiPhong == true">Bạn chưa chọn phòng*</p>
+        </div>
+    </div>
+    <div class="form-group row">                
+        <label class="col-sm-2 col-form-label">Giới tính</label>
+        <div class="col-md-10">
+          <div class="form-group">
+          <select name="gioiTinh" ng-model="input.gioiTinh" class="form-control">
+            <option >Nam</option>
+            <option >Nữ</option>
+          </select>
+          <!-- <label style="color: red;">{{gioiTinhP}}</label> -->
+          <p style="color: red;" ng-if="kiemtradulieu.gioiTinh == true">Bạn chưa chọn giới tính*</p>
+          </div>
+      </div>  
+    </div> 
+    <div class="form-group row">
+      <label  class="col-sm-2 col-form-label">Phương thức thanh toán</label>
+      <div class="col-md-10">
+        <select name="loaiPhong" ng-model="input.phuongthuc"  class="form-control">
+            <option>----Chọn----</option>
+            <option>Đặt cọc</option>
+            <option>Thanh toán trước</option>
+          </select>
+          <p style="color: red;" ng-if="kiemtradulieu.phuongthuc == true">Bạn chưa chọn phương thức thanh toán*</p>
+    </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Ghi chú</label>
+      <div class="col-md-10">
+      <textarea  cols="20" rows="5" class="form-control " ng-model="input.ghichu" placeholder="Ghi chú" ></textarea>
+      <!-- <p style="color: red;" ng-if="kiemtradulieu.ghichu==true">Bạn chưa nhập ghi chú*</p> -->
+    </div>
+      </div>
+    <center><div class="form-group row">
+      <div class="col-md-12">
+       <button ng-click="showw()" class="btn btn-primary">Đặt Phòng</button>
+      </div>
+    </div></center>
+  </form>
+  <center><div class="col-md-12">
+    <div class="card col">
+    <div class="card-body">
+    <h3>{{bill}}</h3>
+        <table class="table table-striped table-inverse ">
+          <thead class="thead-inverse">
+            <tr>
+              <th>Id</th>
+              <th>Tên khách hàng</th>
+              <th>Số điện thoại</th>
+              <th>Căn cước công dân</th>
+              <th>Ngày đến</th>
+              <th>Ngày đi</th>
+              <th>Loại phòng</th>
+              <th>Giới tính</th>
+              <th>Phương thức thanh toán</th>
+              <th>Ghi chú</th>
+            </tr>
+            </thead>  
+            <tbody>
+              <tr ng-repeat="dp in danhsachdatphong">
+              <td>{{dp.id}}</td>
+               <td>{{dp.ten}}</td>
+               <td>{{dp.dienthoai}}</td>
+               <td>{{dp.CanCuoc}}</td>
+               <td>{{dp.ngayDen}}</td>
+               <td>{{dp.ngayDi}}</td>
+               <td>{{dp.loaiPhong}}</td>
+               <td>{{dp.gioiTinh}}</td>              
+               <td>{{dp.phuongthuc}}</td>              
+               <td>{{dp.ghichu}}</td>
+               <td><button ng-click="onDelete(dp.id)">Delete</button></td>              
+              </tr>
+            </tbody>
+        </table>      
+    </div>
+</div>
+  </div></center>
+</main>

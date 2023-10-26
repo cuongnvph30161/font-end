@@ -1,0 +1,54 @@
+
+<main>
+<center><div class="card-body" >
+    <div class="title-nav">
+        <h1>{{lienHe}}</h1>
+    </div>
+    <div class="BriefDescription-nav ">
+        <p><b>Địa chỉ:</b>&nbsp;Trụ sở chính Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
+          <br/>
+          <strong>Tel: </strong>+(84) (0) 333 4540 45 - Fax: +(84) (0) 333 4540 45 - 
+          <strong>Hotline:</strong>&nbsp; +(84) (0) 333 4540 45 </p>
+          <p><strong>Email:</strong> phuocvvph23075@fpt.edu.vn
+          <br><strong>Fanpage: </strong>https://www.facebook.com/</p>
+    </div>
+</div></center>
+</div>
+</div>
+</div>
+<div class="form-group">
+<h3><b>{{hoTro}}</b></h3>
+<p>Bên tôi rất hân hạnh được hỗ trợ bạn, hãy để lại thông tin cho chúng tôi
+nhé. Yêu cầu của bạn sẽ được xử lý và phản hồi trong thời gian sớm nhất!
+</p>
+</div>
+<div class="form-group" >
+<!-- <form action="https://formsubmit.co/phuocvvph23075@fpt.edu.vn" method="POST"> -->
+  <form>
+<div class="form-row">
+    <div class="form-group col-md-6">
+      <label >Họ tên*</label>
+      <input type="text" class="form-control "  ng-model="input.ten"   placeholder="Tên đầy đủ" >
+     
+      <p style="color: red;" ng-if="kiemtradulieu.ten ==true">Bạn chưa nhập tên*</p>
+    </div>
+    <div class="form-group col-md-6">
+      <label >Email*</label>
+      <input type="email" class="form-control"  ng-model="input.email"
+      placeholder="Địa chỉ email"  >
+      <p style="color: red;" ng-if="kiemtradulieu.email ==true">Bạn chưa nhập email*</p>
+      <p style="color: red;" ng-if="kiemtradulieu.emailcheck ==true">Sai định dạng email*</p>
+
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Tin nhắn*</label>
+    <textarea  cols="30" rows="5" class="form-control" ng-model="input.tinnhan" placeholder="Đừng ngại hỏi về vấn đề của bạn." ></textarea>
+    <p style="color: red;" ng-if="kiemtradulieu.tinnhan==true">Bạn chưa nhập tin nhắn*</p>
+
+    <!-- <input type="hidden" name="_captcha" value="false"> -->
+    </div>
+ <center> <button ng-click="showAlert()"class="btn btn-primary">Gửi</button> </center>
+</form>
+</div>
+</main>

@@ -1,0 +1,33 @@
+<form ng-submit="addStudent()">
+  <div class="mb-3">
+    <label for="exampleInputtext1" class="form-label">Họ và tên</label>
+    <input
+      ng-model="student.name"
+      type="text"
+      class="form-control"
+      id="exampleInputtext1"
+      aria-describedby="textHelp"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Năm sinh</label>
+    <input
+      ng-model="student.year"
+      type="text"
+      class="form-control"
+      id="exampleInputPassword1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Chuyên nghành</label>
+    <input
+      ng-model="student.couse"
+      type="text"
+      class="form-control"
+      id="exampleInputPassword1"
+    />
+  </div>
+
+  <button type="reset" class="btn btn-primary">Reset</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

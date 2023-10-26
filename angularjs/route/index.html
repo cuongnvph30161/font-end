@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học route trong angularJS</title>
+    <!-- có  anguarjS mới sử dụng được route -->
+    <script src="./libs/angular.min.js"></script>
+    <script src="./libs/angular-route.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="/asm_cuong/libs/angularjs.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/asm_cuong/css/trangchu.css">
+</head>
+
+<body ng-app="appRoute">
+
+    <head>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#!/trang-chu">Trang chủ</a>
+                        <a class="nav-link" href="#!/gioi-thieu/15/dinhtv7">Giới thiệu</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </head>
+    <main>
+        <!-- đây là view mà dữ liệu sẽ được render -->
+        <div ng-view></div>
+    </main>
+    <footer class="bg-warning">
+    </footer>
+</body>
+
+<script src="./controllers/TrangChuController.js"></script>
+<script src="./controllers/GioiThieuController.js"></script>
+
+<script>
+    let myApp = angular.module('appRoute', ['ngRoute']);
+    // ngRoute cung cấp tính năng định tuyến để quản lí việc điều hướng
+    myApp.config(function ($routeProvider) {
+        // config()  cấu hình các tham số trước khi khởi chạy chương trình
+        //$routeProvider là tham số mặc định không thể thay đổi
+        $routeProvider
+            .when(
+                // ten route
+                '/trang-chu',
+                {
+                    templateUrl: 'views/trangchu.html', // đường dẫn tới view
+                    controller: TrangChuController   // tên của controller cần map đến view
+                }
+            )
+            .when(
+                // ten route
+                '/gioi-thieu/:id/:name',
+                {
+                    templateUrl: 'views/gioithieu.html', // đường dẫn tới view
+                    controller: GioiThieuController   // tên của controller cần map đến view
+                }
+            )
+
+
+
+            .otherwise(
+                {
+                    // Trong trường hợp người dùng yêu cầu 1 đường dẫn
+                    // không trùng với đường dẫn nào
+                    // Nó sẽ tự động chuyển hướng về route này
+                    redirectTo: '/trang-chu',
+                }
+            )
+    });
+
+</script>
+
+</html>

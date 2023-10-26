@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms Demo</title>
+</head>
+
+<body>
+  <h1>Forms Demo</h1>
+  <form action="https://www.google.com/webhp">
+    <p>
+      <label for="UserName">Enter a Username:</label>
+      <input id="UserName" type="text" placeholder="nhập tên người dùng" name="cuongdeptrai" />
+    </p>
+
+    <p>
+      <label for="pass">Enter a PassWord:</label>
+      <input id="pass" type="password" placeholder="nhập mật khẩu" />
+    </p>
+    <div>
+      <label for="color">Enter a Color:</label>
+      <input id="color" type="color" />
+    </div>
+    <p>
+      <!-- Cách 2: ngắn hơn -->
+      <label>
+        Enter a Number:
+        <input type="number" />
+      </label>
+    </p>
+    <button>Submit</button>
+    <input type="submit" value="Click Me!">
+  </form>
+  <!-- vi du 2 -->
+  <p>
+  <form action="https://www.google.com/search">
+    <input type="text" name="search">
+    <button>Search Google</button>
+  </form>
+  </p>
+
+  <p>
+  <form action="https://www.youtube.com/results">
+    <input type="text" name="search_query">
+    <button>Search YouTube</button>
+  </form>
+  </p>
+  <!-- Radio, Checkbox,select -->
+  <form action="ts">
+    <input type="checkbox" name="" id="">
+    <button>Submit</button>
+    <!--  -->
+    <p>
+      <label for="xs">XS</label>
+      <input type="radio" id="xs" name="size" value="xs">
+      <label for="s">S</label>
+      <input type="radio" name="size" id="s" value="s">
+      <label for="m">M</label>
+      <input type="radio" name="size" id="m" value="m">
+    </p>
+    <p>
+      <!-- select -->
+      <label for="meal">Please Select an Entree:</label>
+      <select name="meal" id="meal">
+        <option value="fish">Fish</option>
+        <option value="veg">Vegetarian</option>
+        <option value="steak">Steak</option>
+      </select>
+    </p>
+    <!-- range -->
+    <p>
+      <label for="chesse">Amount of Cheese:</label>
+      <input type="range" id="cheese" min="1" max="10" step="1">
+    </p>
+    <button>Submit</button>
+  </form>
+  <!-- validate -->
+  <h2>Validations Demo</h2>
+  <form action="https://www.google.com/search">
+    <label for="first">Enter First Name:</label>
+    <input type="text" name="first" id="first" minlength="10" maxlength="12" required>
+
+    <p>
+      <label for="">Enter a email:</label>
+      <input type="Email" required>
+      
+    </p>
+    <p>
+      <label for="">link:</label>
+      <input type="url" required>
+    </p>
+    <button>Submit</button>
+  </form>
+
+</body>
+
+</html>

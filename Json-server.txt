@@ -1,0 +1,4 @@
+- Chạy lệnh npm init để khởi tạo cấu hình dự án NodeJS
+- Chạy lệnh npm i json-server để cài đặt json-server
+- Trong file package.json bên trong phần  "scripts" thêm dòng sau "start": "json-server --watch db.json"___
+- Chạy lệnh ___npm start___ để khởi động json-server

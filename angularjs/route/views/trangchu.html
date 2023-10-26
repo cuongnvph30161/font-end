@@ -1,0 +1,28 @@
+<div>
+    <h1>{{title}}</h1>
+    <h2>Thêm dữ liệu</h2>
+    <form ng-submit="themMoi()">
+        <label for="">Họ và tên:</label>
+        <input type="text" class="form-control" ng-model="inputValue.name">
+
+        <label for="">Địa chỉ:</label>
+        <input type="text" class="form-control" ng-model="inputValue.adress">
+        <button type="submit" class="btn btn-success">Thêm mới</button>
+    </form>
+    <!-- Bài 1: Tạo 1 form nhập vào 2 số
+    Tính tổng 2 số sau đó hiển thị ra màn hình(sử dụng ng-if) -->
+    <h2>Bài 1 tính tổng</h2>
+    <form ng-submit="tinhTong()">
+        <label for="">nhập a:</label>
+        <input type="text" class="form-control" ng-model="inputValue.a">
+        <label for="">nhập b:</label>
+        <input type="text" class="form-control" ng-model="inputValue.b">
+   
+        <button ng-click="tinhTong()" type="submit" class="btn btn-success">Tính tổng</button>
+    </form>
+    <p ng-if="sum">Tổng 2 số :{{sum}}</p>
+    <!-- Bài 2: Tạo 1 button có sự kiện ng-click
+    Nếu ấn vào button lần thứ 5 sẽ có hiển thị cảnh báo đỏ -->
+    <button ng-click="dem()">Đếm</button>
+    <p class="text-danger" ng-if="count>=5">Bạn đã ấn lần 5</p>
+</div>

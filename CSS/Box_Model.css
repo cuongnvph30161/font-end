@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+div {
+  width: 200px;
+  height: 200px;
+  background-color: lightcoral;
+}
+
+h1 {
+  background-color: lightcoral;
+  width: 200px;
+  padding-left: 100px;
+  padding-top: 50px;
+  margin: 0;
+}
+
+#one {
+  background-color: pink;
+  border-color: #e5989b;
+  border-width: 5px;
+  border-style: solid;
+  box-sizing: border-box;
+  margin-left: 50px;
+  margin-bottom: 50px;
+}
+
+#two {
+  background-color: #e5989b;
+  border-color: aqua;
+  border-width: 3px;
+  border-style: dashed;
+  border-left-width: 8px;
+  padding-right: 50px;
+  margin: 200px;
+}
+
+#three {
+  background-color: green;
+  border-radius: 50%;
+}
+#eJOY__extension_ai_adv_root {
+  display: none;
+}
+button {
+  padding: 10px 20px;
+}
+span{
+margin-left: 30px;
+margin-bottom:20px ;
+}

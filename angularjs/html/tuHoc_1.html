@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/angularjs/libs/angular.min.js"></script>
+    <script src="/angularjs/js/tuHoc_1.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="nameCtrl">
+        <div>
+            <h1 ng-mousemove="hello()">
+                Move Mouse Here
+            </h1>
+            <h3>Count : {{count}}</h3>
+        </div>
+        <div>
+            FirstName <input type="tex" ng-model="employee.FirstName">
+            <br>
+            FirtName:{{employee.FirstName}}
+        </div>
+    </div>
+    <br>
+    <div ng-controller="myController">
+        <input type="text" ng-model="name">
+        <button ng-click="sayHello()">Click</button>
+        <div>{{name}}</div>
+    </div>
+    <div ng-controller="repeatController">
+        <ul>
+            <li ng-repeat="student in students">
+                {{student.ten}} - {{student.namSinh}} - {{student.chuyenhNghanh}}
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

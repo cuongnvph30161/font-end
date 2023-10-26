@@ -1,0 +1,31 @@
+section{
+    background-color: cadetblue;
+    width: 400px;
+    height: 400px;
+}
+div{
+    background-color:crimson;
+    width: 50%;
+    height: 50%;
+}
+
+h1{
+    border: 1px solid black;
+    height: 10%;
+    width: 10%;
+}
+h2{
+    font-size: 2em;
+    margin-left: 1em;
+}
+article{
+    font-size: 50px;
+}
+p{
+    font-size: 1em;
+}
+button{
+    font-size: 1em;
+    border-radius: 0.5em;
+    background-color: chocolate;
+}

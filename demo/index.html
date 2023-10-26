@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Học route trong angularJS</title>
+    <script src="./libs/angular.min.js"></script>
+    <script src="./libs/angular-route.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body ng-app="appRoute">
+    <head>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#!/trang-chu"
+                >Trang chủ</a
+              >
+              <a class="nav-link" href="#!/gioi-thieu/15/dinhtv7">Giới thiệu</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </head>
+    <main class="container">
+      <div ng-view></div>
+    </main>
+    <footer class="bg-warning"></footer>
+  </body>
+
+  <script src="./controllers/ListStudentController.js"></script>
+  <script src="./controllers/AddStudentController.js"></script>
+  <script src="./controllers/EditStudentController.js"></script>
+
+  <script>
+    let myApp = angular.module("appRoute", ["ngRoute"]);
+    myApp.config(function ($routeProvider) {
+      $routeProvider
+        .when(
+          // ten route
+          "/trang-chu",
+          {
+            templateUrl: "views/liststudent.html", // đường dẫn tới view
+            controller: ListStudentController, // tên của controller cần map đến view
+          }
+        )
+        .when(
+          // ten route
+          "/add-student",
+          {
+            templateUrl: "views/addstudent.html", // đường dẫn tới view
+            controller: AddStudentController, // tên của controller cần map đến view
+          }
+        )
+        .when(
+          // ten route
+          "/edit-student/:id",
+          {
+            templateUrl: "views/editstudent.html", // đường dẫn tới view
+            controller: EditStudentController, // tên của controller cần map đến view
+          }
+        )
+
+        .otherwise({
+          // Trong trường hợp người dùng yêu cầu 1 đường dẫn
+          // không trùng với đường dẫn nào
+          // Nó sẽ tự động chuyển hướng về route này
+          redirectTo: "/trang-chu",
+        });
+    });
+  </script>
+</html>

@@ -1,0 +1,16 @@
+.textslide1 {
+    position: absolute;
+    top: 200px;
+    left: 50px;
+}
+.carousel-inner img {
+    height: 555px; /* Đặt chiều cao của ảnh */
+    width: 100%; /* Đặt chiều rộng của ảnh */
+    object-fit: cover; /* Đảm bảo tỷ lệ khung hình bị giữ nguyên và ảnh không bị biến dạng */
+}
+.square {
+    padding: 20px; /* Điều chỉnh khoảng cách theo nhu cầu của bạn */
+    background-color: white; /* Màu nền trắng */
+    text-align: center; /* Căn giữa nội dung */
+}
+

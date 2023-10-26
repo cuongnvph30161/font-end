@@ -1,0 +1,40 @@
+<div class="card-body">
+<div class="form-group">
+  <label >Tên</label>
+  <input type="text" class="form-control"  ng-model="input.ten" placeholder="Nhập tên">
+    <p style="color: red;" ng-if="kiemtradulieu.ten == true">Bạn chưa nhập tên*</p>
+</div>
+<div class="form-group">
+    <label >Năm sinh</label>
+    <input type="text" class="form-control"   ng-model="input.namSinh"  placeholder="Nhập năm sinh" required>
+    <p style="color: red;" ng-if="kiemtradulieu.namSinh == true ">Bạn chưa nhập năm sinh*</p>
+  </div>
+  <div class="form-group">
+    <label>Địa chỉ</label>
+    <input type="text" class="form-control"  ng-model="input.diaChi"  placeholder="Nhập địa chỉ">  
+    <p style="color: red;" ng-if="kiemtradulieu.diaChi == true">Bạn chưa nhập địa chỉ*</p>
+  </div>
+  <center><button  ng-click="Save()" class="form-control" style="background: chocolate; color: white;">THÊM KHÁCH HÀNG</button> </center>
+</div>
+
+ <table class="table table-striped table-inverse ">
+    <thead class="thead-inverse">
+        <tr>
+            <th>ID</th>
+            <th>Tên Khách Hàng</th>
+            <th>Năm sinh</th>
+            <th>Địa chỉ</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="kh in danhsachkhachhang">
+                <td>{{kh.id}}</td>
+                <td>{{kh.ten}}</td>
+                <td>{{kh.namSinh}}</td>
+                <td>{{kh.diaChi}} </td>
+                <td><button ng-click="onEdit(kh.id)">Edit</button></td>
+                <td><button ng-click="onDelete(kh.id)">Delete</button></td>
+            </tr>
+        </tbody>
+ </table>
+  

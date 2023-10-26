@@ -1,0 +1,19 @@
+body{
+    font-family: 'Roboto',sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50em;
+    background-color: brown;
+}
+button{
+    background-color: brown;
+    color: coral;
+    border: 2px solid;
+    padding: 1em;
+}
+button:hover{
+    border-color: chartreuse;
+    box-shadow: 1px 1px 1px chartreuse;
+    transform: translateY(-0.25em);
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="/angularjs/libs/angular.min.js"></script>
+    <script src="/angularjs/js/buoi6.js"></script>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="staffController">
+        <input type="text" ng-m>
+        <table class="table">
+            <tr>
+                <td>Tên</td>
+                <td>Ngày sinh</td>
+                <td>Lương</td>
+                <td>Giới tính</td>
+            </tr>
+
+            <tr ng-repeat="item in staffs ">
+                <td ng-click="handleAction(item.ten)" >{{item.ten|uppercase}}</td>
+                <td ng-mouseenter="fn(item.ngaySinh)">{{item.ngaySinh|date: 'dd/MMM/yy'}}</td>
+                <td>{{item.mucLuong|currency:'':0}}</td>
+                <td>{{item.gioiTinh ==0?"Nam":"Nữ"}} </td>
+            </tr>
+        </table>
+
+        <!-- tạo 1 ô input - nhập vào số bn sẽ hiển thị bấy nhiêu -->
+        <!-- ng-model dùng để liên kết dữ liệu 2 chiều
+        giữa view và 1 biến chứa dữ liejeu -->
+        <h1>{{hoten}}</h1>
+        <input type="text" ng-model="hoten">
+        <!-- Click -->
+        <button class="btn btn-primary" ng-click="sayHello()">Ấn vào em đi</button>
+        <!-- Click vào tên của nhân viên nào thì hiển thị Xin chào + tên của nhân viên đđó -->
+        <!-- Hover -->
+        <h3 ng-mouseenter="hover()">Đưa tay đây nào......</h3>
+        
+    </div>
+</body>
+
+</html>

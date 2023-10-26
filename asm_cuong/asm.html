@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./libs/angularjs.min.js"></script>
+    <script src="./libs/angular-route.min.js"></script>
+    <link rel="stylesheet" href="./css/trangchu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+</head>
+
+<body ng-app="appRoute">
+
+    <!-- đầu trang -->
+    <nav class="navbar navbar-expand-md ">
+        <div class="container">
+            <div>
+                <a href="#" class="navbar-brand"><img src="/asm_cuong/image/VNA_logo_vn.webp"
+                        style="height: 55px;width: 284px;" alt=""></a>
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item ">
+                        <a href="#!/trang-chu" class="nav-link text-danger ">TRANG CHỦ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#!/lien-he" class="nav-link text-danger">LIÊN HỆ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#!/dat-ve" class="nav-link text-danger">ĐẶT VÉ</a>
+                    </li>
+                 
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Carousel -->
+    <div class="carousel slide" id="slider">
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button class="active" data-bs-slide-to="0" data-bs-target="#slider"></button>
+            <button data-bs-slide-to="1" data-bs-target="#slider"></button>
+            <button data-bs-slide-to="2" data-bs-target="#slider"></button>
+            <button data-bs-slide-to="3" data-bs-target="#slider"></button>
+
+        </div>
+
+        <div class="carousel-inner">
+            <!-- slide 1 -->
+            <div class="carousel-item active">
+                <div> <img src="/asm_cuong/image/SOSO hero.jpg" alt="" class="d-block w-100" />
+                </div>
+                <div class="carousel-caption d-none d-md-block  opacity-75">
+                    <h5
+                        style="font-size: 25px; line-height: 29px; font-family: 'Diavlobook-Regular', Arial, sans-serif;">
+                        Nhập mã SUNOFF2509 giảm ngay 10% giá vé nội địa</h5>
+                    <ul class="nav nav-underline">
+                        <li class="nav-item">
+                            <a class="" aria-current="page" href="#" style="padding-left: 650px;">>Khám phá ngay</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- slide 2 -->
+            <div class="carousel-item">
+                <img src="/asm_cuong/image/Hero_Web-2600x1111_ban_tet.jpg" alt="" class="d-block w-100" />
+                <div class="carousel-caption d-none d-md-block  opacity-75">
+                    <h5>Nhạ</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <!-- slide 3 -->
+            <div class="carousel-item">
+                <img src="/asm_cuong/image/VNA-B2B-Home-Banner-suatan.webp" alt="" class="d-block w-100" />
+                <div class="carousel-caption d-none d-md-block  opacity-75">
+                    <h5>Tailwind From Scratch</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <!-- slide 4 -->
+            <div class="carousel-item">
+                <img src="/asm_cuong/image/banh-trung-thu-23.webp" alt="" class="d-block w-100" />
+                <div class="carousel-caption d-none d-md-block  opacity-75">
+                    <h5>Tailwind From Scratch</h5>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Buttons -->
+        <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#slider">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#slider">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+    <main>
+        <!-- đây là view mà dữ liệu sẽ được render -->
+        <div ng-view>
+
+        </div>
+
+    </main>
+  
+</body>
+
+
+
+<script src="./controller/TrangChuController.js"></script>
+<script src="./controller/LienHeController.js"></script>
+<script src="./controller/DatVeController.js"></script>
+
+<script>
+    let myApp = angular.module('appRoute', ['ngRoute']);
+    // ngRoute cung cấp tính năng định tuyến để quản lí việc điều hướng
+    myApp.config(function ($routeProvider) {
+        // config()  cấu hình các tham số trước khi khởi chạy chương trình
+        //$routeProvider là tham số mặc định không thể thay đổi
+        $routeProvider
+            .when(
+                // ten route
+                '/trang-chu',
+                {
+                    templateUrl: 'html/trangchu.html', // đường dẫn tới view
+                    controller: TrangChuController   // tên của controller cần map đến view
+                }
+            )
+            .when(
+                // ten route
+                '/lien-he',
+                {
+                    templateUrl: 'html/tranglienhe.html', // đường dẫn tới view
+                    controller: LienHeController   // tên của controller cần map đến view
+                }
+            )
+            .when(
+                // ten route
+                '/dat-ve',
+                {
+                    templateUrl: 'html/trangdatve.html', // đường dẫn tới view
+                    controller: DatVeController   // tên của controller cần map đến view
+                }
+            )
+            .otherwise({
+                redirectTo:"/trang-chu"
+            })
+
+
+
+    });
+
+</script>
+
+</html>

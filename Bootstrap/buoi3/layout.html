@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <title>Layout trong bootstrap</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Để sử dụng grid trong bootstrap bắt buộc phần nd phải đặt ở trong row -->
+        <div class="row">
+            <!--col dùng để chia cột trong bootstap -->
+            <!-- chỉnh độ rộng của col chúng ta thêm các chỉ số sau col (1->12) -->
+            <!-- tổng các chỉ số trong 1 hàng phải = 12 -->
+            <div class="col-12 col-sm-6 col-md-3 bg-danger"> Column 1</div>
+            <div class="col-12 col-sm-6 col-md-3 bg-warning"> Column 2</div>
+            <div class="col-12 col-sm-6 col-md-3 bg-primary"> Column 3</div>
+            <!-- nếu quá col 12 nó sẽ đẩy xuống dòng tiếp theo  -->
+            <div class="col-12 col-sm-6 col-md-3 bg-success"> Column 4</div>
+        </div>
+        <br>
+        <button class="btn btn-outline-primary"><i class="bi bi-floppy"></i>Lưu</button>
+    </div>
+</body>
+
+</html>

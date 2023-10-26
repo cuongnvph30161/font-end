@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "student":[
+    {
+      "id":1,
+      "name":"DinhTV7",
+      "year":2004,
+      "couse":"PTPM"
+    },
+    {
+      "id":2,
+      "name":"haha",
+      "year":2004,
+      "couse":"PTPM"
+    }
+  ]
+}

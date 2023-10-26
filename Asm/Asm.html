@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>ASM Hoàn Thiện</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    <script src="controller/TrangChuController.js"></script>
+    <script src="controller/LienHeController.js"></script>
+    <script src="controller/DatPhongController.js"></script>
+    <link rel="stylesheet" href="fontawesome-free-6.2.1-web/css/all.min.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body >
+      <!-- <h1>Đây là router trong angular</h1> -->
+    <div ng-app="app-router">
+      <div class="container-fluid">
+        <div class="form-group">
+            <header class="row">
+                <img src="images/hi.png" width="1500px" height="290px" >
+            </header>
+        </div>
+        <div class="form-group">
+            <div class="col-12">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#"  ><i class="fa-solid fa-house"></i>TRANG CHỦ</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="navbar-brand" href="#!/lien-he"><i class="fa-solid fa-phone"></i>LIÊN HỆ <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="navbar-brand" href="#!/dat-phong"><i class="fa-solid fa-chess-rook"></i>ĐẶT PHÒNG</a>
+                    </li>
+                    
+                </div>
+              </nav>
+        </div>
+        <main>
+          <!-- Định nghĩa vị trí mà nội dung sẽ render ra -->
+          <div ng-view></div>
+        </main>
+        </div>
+      
+    </div>    
+        <footer class="row" >
+        <div class="card col">
+          <div class="card-body">
+            <center><div class="title_ft">
+              <h4>Thông tin liên hệ</h4>
+            </div>
+            <p><strong>Địa chỉ:</strong>Trụ sở chính Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội</p>
+            <p><strong>Tel:</strong>+(84) (0) 333 4540 45</p>
+            <p><strong>Fax:</strong>+(84) (0) 333 4540 45 </p><p><strong>Email:</strong>phuocvvph23075@fpt.edu.vn</p>
+            <p><strong>Fanpage:</strong>https://www.facebook.com/</p>
+          </center>
+            <center><p> FPT Polytechnic &copy; 2017. All rights reserved</p></center>
+          </div>
+        </div>
+        </footer>
+    </div>
+    
+
+    <script type="text/javascript">
+      // đây là nơi để điều hướng router
+      angular.module('app-router',['ngRoute']).config(function($routeProvider){
+        $routeProvider.when('/',{
+          templateUrl:'view/TrangChu.html',
+          controller: TrangChuController
+        })
+        .when('/lien-he',{
+          templateUrl:'view/LienHe.html',
+          controller: LienHeController
+        }) 
+         
+        .when('/dat-phong',{
+          templateUrl:'view/DatPhong.html',
+          controller: DatPhongController
+        })
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

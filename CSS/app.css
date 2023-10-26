@@ -1,0 +1,80 @@
+/* * {
+    background-color: cyan;
+} */
+
+body {
+  background-color: #f1faee;
+}
+
+button {
+  font-size: 30px ; 
+  background-color: #a8dadc ;
+}
+/* cả thẻ h1 và h2 đều có hiệu lực */
+h1,h2 {
+  color: #1d3557;
+}
+
+
+
+.tag {
+  color: white;
+  background-color: red;
+}
+.post a {
+  color: green;
+}
+footer a {
+  color: red;
+}
+/* những button sau thẻ input mới có hiệu lực */
+input + button {
+  background-color: red;
+}
+h2 + button {
+  background-color: burlywood;
+}
+div > ul > li {
+  color: blue; /* Áp dụng màu xanh cho các phần tử li trực tiếp trong ul và ul trực tiếp trong div */
+}
+
+div li {
+  background-color: chartreuse; /* Áp dụng in đậm cho tất cả các phần tử li con của div */
+}
+/* Bộ chọn thuộc tính Attribute Selector */
+input[type="password"]{
+    color: green;
+}
+section[class="post"]{
+    background-color: blueviolet;
+}
+a[href*="google"]{
+color: chartreuse;
+}
+
+.post button:hover{ 
+  background-color: chocolate  ;
+  color: chartreuse;
+}
+#signup {
+  background-color: #1d3557;
+  color: #f1faee;
+}
+.post button:active{
+  background-color: aqua;
+}
+/* 2n: chẵn , 2n+1 lẻ ....*/
+.post:nth-of-type(2){
+  background-color: crimson;
+}
+/* pseudo element */
+p::first-line{
+  color: crimson;
+}
+/* :: áp dụng cho toàn bộ tài liệu */
+::selection{
+  background-color: chocolate;
+}
+button:hover{
+  background-color: darkolivegreen ;
+}

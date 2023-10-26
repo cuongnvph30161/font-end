@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularjS</title>
+    <!-- Nhúng thư viện bằng link CDN -->
+    <script src="/angularjs/libs/angular.min.js"></script>
+
+
+</head>
+<!-- Để khởi tạo chương trình, Đầu tiên chúng ta cần phải định nghĩa vùng xử dụng angularJS
+ng-app: dùng để định nghĩa -->
+
+<body ng-app="myNYC">
+    <div ng-controller="demoController">
+        <h1>{{xinchao}}</h1>
+    </div>
+    <div ng-controller="svController">
+        <!-- <h2>{{ten}}</h2> -->
+        <!-- Cách hiển thị thứ 2 -->
+        <h2 ng-bind="ten"></h2>
+        <h1>Danh sách sinh viên</h1>
+        <table border="1">
+            <tr>
+                <td>tên</td>
+                <td>năm sinh</td>
+                <td>chuyên nghành</td>
+            </tr>
+            <tr>
+                <td>{{students[1].ten}}</td>
+                <td>{{students[1].namSinh}}</td>
+                <td>{{students[1].chuyenhNghanh}}</td>
+            </tr>
+
+            <tr ng-repeat="item in students ">
+                
+                <td>{{item.ten}}</td>
+                <td>{{item.namSinh}}</td>
+                <td>{{item.chuyenhNghanh}}</td>
+            </tr>
+        </table>
+    </div>
+    <!-- Khởi tạo 1 vòng controller mới
+    Khai báo và hiển thị ra tên, năm sinh, chuyên nghafnhF -->
+
+</body>
+<!-- Nhúng trực tiếp -->
+<script>
+
+</script>
+<!-- Liên kết ngoài  -->
+<script src="/angularjs/js/buoi5.js"></script>
+
+</html>

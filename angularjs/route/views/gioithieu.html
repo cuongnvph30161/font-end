@@ -1,0 +1,33 @@
+<div>
+    <h1>{{gioithieu}}</h1>
+    <h1>Danh sách sinh viên</h1>
+    <table class="table">
+        <tr>
+            <td>tên</td>
+            <td>năm sinh</td>
+            <td>chuyên nghành</td>
+        </tr>
+        <tr>
+            <td>{{students[1].ten}}</td>
+            <td>{{students[1].namSinh}}</td>
+            <td>{{students[1].chuyenhNghanh}}</td>
+        </tr>
+
+        <tr ng-repeat="item in students ">
+            
+            <td>{{item.ten}}</td>
+            <td>{{item.namSinh}}</td>
+            <td>{{item.chuyenhNghanh}}</td>
+        </tr>
+    </table>
+    <h2>Bài 1 tính tổng</h2>
+    <form ng-submit="tinhTong()">
+        <label for="">Họ và tên :</label>
+        <input type="text" class="form-control" ng-model="student.name">
+        <label for="">Năm sinh:</label>
+        <input type="text" class="form-control" ng-model="student.year">
+        <label for="">Chuyên nghành :</label>
+        <input type="text" class="form-control" ng-model="student.couse">
+        <button ng-click="createStudent()" type="submit" class="btn btn-success">Thêm mới</button>
+    </form>
+</div>
